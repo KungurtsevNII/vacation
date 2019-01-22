@@ -25,7 +25,7 @@ class ApprovalVacationRule extends Rule
             return true;
         }
 
-        $vacationModel = $param['vacationModel'];
+        $vacationModel = $params['vacationModel'];
         if (Employees::findOne($vacationModel->employee_id)->boss_clock_number == \Yii::$app->user->id) {
             return true;
         }
