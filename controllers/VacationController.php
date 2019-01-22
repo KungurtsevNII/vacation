@@ -104,7 +104,7 @@ class VacationController extends \yii\web\Controller
         // Правило на разрешении.
         if (
             !\Yii::$app->user->can('updateVacation', ['vacationModel' => $vacationModel])
-            && !$vacationModel->isUpdatable()
+            || !$vacationModel->isUpdatable()
         ) {
             throw new ForbiddenHttpException('Так делать не стоит', 403);
         }
