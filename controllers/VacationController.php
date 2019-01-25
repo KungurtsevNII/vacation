@@ -4,8 +4,10 @@ namespace app\controllers;
 
 use app\models\Employees;
 use app\models\Vacations;
+use app\models\VacationsSearch;
 use app\rbac\ApprovalVacationRule;
 use app\rbac\UpdateVacationRule;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\ForbiddenHttpException;
 use yii\web\NotFoundHttpException;
@@ -77,10 +79,12 @@ class VacationController extends \yii\web\Controller
      */
     public function actionReadVacation()
     {
-        $vacations = Vacations::find()->all();
+        $searchModel = new VacationsSearch();
+        $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
 
         return $this->render('read-vacation', [
-            'vacations' => $vacations
+            'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel
         ]);
     }
 

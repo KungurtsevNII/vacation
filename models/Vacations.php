@@ -88,4 +88,9 @@ class Vacations extends \yii\db\ActiveRecord
     {
         return ($this->status == 1) ? true : false;
     }
+
+    /* Геттер для ФИО */
+    public function getSecondNameWithInitial() {
+        return $this->employee->getSecondNameWithInitial();
+    }
 }

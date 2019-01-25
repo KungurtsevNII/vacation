@@ -4,6 +4,7 @@
 /* @var $vacations \app\models\Vacations[] */
 
 use app\models\Vacations;
+use yii\grid\GridView;
 use yii\helpers\Html;
 
 $this->title = 'Согласование отпусков';
@@ -32,3 +33,4 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php endforeach; ?>
     </tbody>
 </table>
+

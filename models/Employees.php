@@ -157,7 +157,7 @@ class Employees extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
      */
     public function getSecondNameWithInitial()
     {
-        return $this->second_name . '&nbsp' . substr($this->name, 0, 2) . '.&nbsp' . substr($this->middle_name, 0, 2) . '.';
+        return $this->second_name . ' ' . substr($this->name, 0, 2) . '. ' . substr($this->middle_name, 0, 2) . '.';
     }
 
     /**
