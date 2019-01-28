@@ -186,7 +186,7 @@ class VacationController extends \yii\web\Controller
 
         // Занесение данных в бд.
         if (!$vacationModel->save()) {
-            \Yii::$app->session->addFlash('danger', 'Произошла ошибка.' . $str);
+            \Yii::$app->session->addFlash('danger', 'Произошла ошибка.');
         } else {
             \Yii::$app->session->addFlash('success', 'Отпуск успешно согласован.');
         }

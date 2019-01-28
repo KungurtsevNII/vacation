@@ -14,7 +14,6 @@ class VacationsSearch extends Vacations
     public function rules() {
         return [
             [['secondNameWithInitial', 'date_start'], 'string'],
-            [['status'], 'integer'],
         ];
     }
 
@@ -66,7 +65,7 @@ class VacationsSearch extends Vacations
         }
 
         $query->andFilterWhere([
-            'date_start' => $this->date_start,
+            'date_start' => empty($this->date_start) ? $this->date_start : date('Y-m-d', strtotime($this->date_start))
         ]);
         $query->andFilterWhere([
             'like',
